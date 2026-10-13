@@ -99,8 +99,15 @@ void evaluateExpression(Stack* stack) {
     }
     printf("%d", pop(stack));
 }
+
+void freeStack(Stack* stack) {
+    free(stack->data);
+    free(stack);
+}
+
 int main() {
     Stack* stack = initStack();
     evaluateExpression(stack);
+    freeStack(stack);
     return 0;
 }
