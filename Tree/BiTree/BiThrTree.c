@@ -22,7 +22,7 @@ void createBiTree(TreeNode** root) {
         *root = NULL;
     }
     else {
-        *root = (TreeNode*)malloc(sizeof(TreeNode));
+        *root = (TreeNode*)malloc(sizeof(TreeNode)); 
         (*root)->data = ch;
         // 错误：ltag/rtag 没有统一初始化。只有孩子非空时才赋值，
         //       叶子结点（孩子为 NULL）的两个 tag 是 malloc 出来的垃圾值。
@@ -83,7 +83,7 @@ void threading(TreeNode* root) {
 }
 
 void inOrderThreading(TreeNode* root, TreeNode** head) {
-    *head = malloc(sizeof(TreeNode));
+    *head = (TreeNode*)malloc(sizeof(TreeNode));
     (*head)->ltag = 0;
     (*head)->rtag = 1;
     (*head)->right = *head;
